@@ -2,7 +2,7 @@
 # bin/detect BUILD_DIR
 
 BUILD_DIR=$1
-
+exit 0
 cd $BUILD_DIR
 
 export PATH="$BUILD_DIR/vendor/bundle/bin:$PATH"

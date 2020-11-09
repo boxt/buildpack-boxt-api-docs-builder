@@ -5,7 +5,9 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "BUNDLE_BIN: $BUNDLE_BIN"
-echo "moving into $BUILD_DIR"
-cd $BUILD_DIR
-$BUNDLE_BIN rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
+ls $BUILD_DIR
+ls $CACHE_DIR
+# echo "BUNDLE_BIN: $BUNDLE_BIN"
+# echo "moving into $BUILD_DIR"
+# cd $BUILD_DIR
+# $BUNDLE_BIN rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
