@@ -10,6 +10,6 @@ export RACK_ENV=qa
 
 cd $BUILD_DIR
 touch "public/gavin-test.txt"
-exit(0)
+exit 0
 #
 # bin/rails docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
