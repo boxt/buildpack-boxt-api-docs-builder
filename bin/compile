@@ -4,5 +4,5 @@
 cd $BUILD_DIR
 echo "$BUILD_DIR/pubic/api-docs"
 echo "$BUNDLE_BIN"
-ls $BUNDLE_BIN
+ls "$BUILD_DIR/$BUNDLE_BIN"
 rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
