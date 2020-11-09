@@ -9,6 +9,7 @@ export RAILS_ENV=qa
 export RACK_ENV=qa
 
 cd $BUILD_DIR
+cat "DATABASE_URL:$DATABASE_URL"
 echo 'hello world' >> public/gavin-test.txt
 exit 0
 #
