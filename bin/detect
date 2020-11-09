@@ -2,7 +2,13 @@
 # bin/detect BUILD_DIR
 
 cd $BUILD_DIR
-gem list
+echo "BUNDLE BIN: $BUNDLE_BIN"
+
+export BUNDLE_WITHOUT='development:test'
+export BUNDLE_PATH=vendor/bundle
+export BUNDLE_BIN=vendor/bundle/bin
+export BUNDLE_DEPLOYMENT=1
+
 bundle info boxt_documentation
 
 # This pack is valid if the boxt_documentation gem is installed
