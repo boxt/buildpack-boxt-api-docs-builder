@@ -7,7 +7,7 @@ cd $BUILD_DIR
 
 export PATH="$BUILD_DIR/vendor/bundle/bin:$PATH"
 
-bundle info boxt_documentation
+rake -T
 
 # This pack is valid if the boxt_documentation gem is installed
 if [ $? -eq 0 ]; then
