@@ -1,6 +1,8 @@
 #!/bin/sh
 # bin/detect BUILD_DIR
 
+cd $BUILD_DIR
+gem list
 bundle info boxt_documentation
 
 # This pack is valid if the boxt_documentation gem is installed
