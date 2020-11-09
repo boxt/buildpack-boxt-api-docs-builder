@@ -5,6 +5,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 cd $BUILD_DIR
+ls -al
 bundle info boxt_documentation
 
 # This pack is valid if the boxt_documentation gem is installed
