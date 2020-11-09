@@ -1,7 +1,12 @@
 #!/bin/sh
 
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
-# cd $BUILD_DIR
+echo "1: $BUILD_DIR"
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+echo "2: $BUILD_DIR"
+
 echo "$BUILD_DIR/pubic/api-docs"
 echo "$BUNDLE_BIN"
 ls -al

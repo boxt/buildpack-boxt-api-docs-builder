@@ -1,6 +1,9 @@
 #!/bin/sh
 # bin/detect BUILD_DIR
-
+exit 0
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
 cd $BUILD_DIR
 
 gem install bundler --no-document
@@ -8,9 +11,8 @@ bundle info boxt_documentation
 
 # This pack is valid if the boxt_documentation gem is installed
 if [ $? -eq 0 ]; then
-  echo "BOXT Documentation gem installed"
+  echo "BOXT Documentation"
   exit 0
 else
-  echo "BOXT Documentation gem not installed. Exiting"
   exit 1
 fi
