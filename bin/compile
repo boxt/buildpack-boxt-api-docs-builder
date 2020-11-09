@@ -2,4 +2,6 @@
 
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 echo "$BUILD_DIR/pubic/api-docs"
+echo "$BUNDLE_BIN"
+ls $BUNDLE_BIN
 rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
