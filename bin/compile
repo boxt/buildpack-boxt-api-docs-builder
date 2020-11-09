@@ -7,6 +7,7 @@ ENV_DIR=$3
 
 export RAILS_ENV=qa
 export RACK_ENV=qa
-ls "$BUILD_DIR/bin"
+
 cd $BUILD_DIR
-bin/rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
+
+bin/rails docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
