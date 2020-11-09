@@ -12,7 +12,12 @@ export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
 export RAILS_ENV=`cat $ENV_DIR/RAILS_ENV`
 export RACK_ENV=`cat $ENV_DIR/RACK_ENV`
 
-testGavin "Hello world"
+export DATABASE_FILE_CONTENT=<<-YAML
+$RAILS_ENV:
+  url: "$DATABASE_URL"
 
+YAML
+
+echo $DATABASE_FILE_CONTENT >> config/database.yml
 
 exit 0
