@@ -5,8 +5,12 @@ BUILD_DIR=$1
 
 cd $BUILD_DIR
 
+export PATH="$BUILD_DIR/vendor/bundle/bin:$PATH"
+
+bundle info boxt_documentation
+
 # This pack is valid if the boxt_documentation gem is installed
-if [ 0 -eq 0 ]; then
+if [ $? -eq 0 ]; then
   echo "BOXT Documentation"
   exit 0
 else
