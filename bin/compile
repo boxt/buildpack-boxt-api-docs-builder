@@ -14,6 +14,8 @@ echo "DATABASE_URL:$DATABASE_URL"
 
 echo "ENV: $RAILS_ENV" >> public/gavin-test.txt
 cat config/database.yml
+bin/create_database_yml
+cat config/database_yml
+bin/rails docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
+
 exit 0
-#
-# bin/rails docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
