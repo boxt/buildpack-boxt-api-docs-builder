@@ -20,4 +20,5 @@ YAML
 
 echo $DATABASE_FILE_CONTENT >> config/database.yml
 
+bin/rake docs:api:build -- --api-class-name=V2::API --base-dir="$BUILD_DIR/public/api-docs"
 exit 0
