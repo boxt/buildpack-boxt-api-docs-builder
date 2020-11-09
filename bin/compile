@@ -7,17 +7,12 @@ ENV_DIR=$3
 
 cd $BUILD_DIR
 
-export RAILS_ENV=test
-# echo "DATABASE_URL:$DATABASE_URL"
-# export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
-# export RAILS_ENV=`cat $ENV_DIR/RAILS_ENV`
-# export DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+echo "DATABASE_URL:$DATABASE_URL"
+export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
+export RAILS_ENV=`cat $ENV_DIR/RAILS_ENV`
+export RACK_ENV=`cat $ENV_DIR/RACK_ENV`
 
-# echo "DATABASE_URL:$DATABASE_URL"
+testGavin "Hello world"
 
-# echo "ENV: $RAILS_ENV" >> public/gavin-test.txt
-# echo "DIR: $DIR"
-
-bin/rails docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
 
 exit 0
