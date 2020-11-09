@@ -7,9 +7,4 @@ ENV_DIR=$3
 
 ls "$BUILD_DIR/bin"
 cd $BUILD_DIR
-bin/bundle check
-exit 1
-# echo "BUNDLE_BIN: $BUNDLE_BIN"
-# echo "moving into $BUILD_DIR"
-# cd $BUILD_DIR
-# $BUNDLE_BIN rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
+bin/rake docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"

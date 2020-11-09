@@ -2,13 +2,9 @@
 # bin/detect BUILD_DIR
 
 BUILD_DIR=$1
-exit 0
+
 cd $BUILD_DIR
-
-export PATH="$BUILD_DIR/vendor/bundle/bin:$PATH"
-
-rake -T
-
+bin/bundle info boxt_documentation
 # This pack is valid if the boxt_documentation gem is installed
 if [ $? -eq 0 ]; then
   echo "BOXT Documentation"
