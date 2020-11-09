@@ -5,24 +5,15 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "DATABASE_URL:$DATABASE_URL"
-
-export_env_dir($ENV_DIR) {
-  env_dir=$1
-  acceptlist_regex=${2:-''}
-  denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
-  if [ -d "$env_dir" ]; then
-    for e in $(ls $env_dir); do
-      echo "$e" | grep -E "$acceptlist_regex" | grep -qvE "$denylist_regex" &&
-      export "$e=$(cat $env_dir/$e)"
-      :
-    done
-  fi
-}
-
 cd $BUILD_DIR
+
 echo "DATABASE_URL:$DATABASE_URL"
-echo 'hello world' >> public/gavin-test.txt
+export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
+export RAILS_ENV=`cat $ENV_DIR/RAILS_ENV`
+echo "DATABASE_URL:$DATABASE_URL"
+
+echo "ENV: $RAILS_ENV" >> public/gavin-test.txt
+
 exit 0
 #
 # bin/rails docs:api:build -- --api-class-name=V2::API --build-dir="$BUILD_DIR/pubic/api-docs"
