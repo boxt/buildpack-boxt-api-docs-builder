@@ -3,8 +3,7 @@
 
 cd $BUILD_DIR
 
-exit 0
-
+gem install bundler --no-document
 bundle info boxt_documentation
 
 # This pack is valid if the boxt_documentation gem is installed
