@@ -2,12 +2,10 @@
 # bin/detect BUILD_DIR
 
 BUILD_DIR=$1
-CACHE_DIR=$2
-ENV_DIR=$3
-exit 0
+
 cd $BUILD_DIR
-ls -al
-bundle info boxt_documentation
+
+$BUNDLE_BIN bundle info boxt_documentation
 
 # This pack is valid if the boxt_documentation gem is installed
 if [ $? -eq 0 ]; then
