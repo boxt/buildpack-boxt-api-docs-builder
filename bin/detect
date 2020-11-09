@@ -1,10 +1,13 @@
 #!/bin/sh
 # bin/detect BUILD_DIR
 
-# this pack is valid for apps with a hello.txt in the root
-if [ -f $1/Rakefile ]; then
-  echo "Gavin Test"
+bundle info boxt_documentation
+
+# This pack is valid if the boxt_documentation gem is installed
+if [ $? -eq 0 ]; then
+  echo "BOXT Documentation gem installed"
   exit 0
 else
+  echo "BOXT Documentation gem not installed. Exiting"
   exit 1
 fi
