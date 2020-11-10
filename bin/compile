@@ -1,21 +1,19 @@
 #!/bin/sh
 
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
+
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo `which gem`
-echo `which bundle`
-
 cd $BUILD_DIR
 
-echo "DATABASE_URL:$DATABASE_URL"
+# Set ENV vars
 export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
 export RAILS_ENV=`cat $ENV_DIR/RAILS_ENV`
 export RACK_ENV=`cat $ENV_DIR/RACK_ENV`
 
-# Stash the database file over
+# Stash the database file before replacing it...
 cp config/database.yml config/database.yml.stash
 
 # Rewrite the database file to use the DATABASE_URL. This emulates Heroku's own buildpack
@@ -28,10 +26,12 @@ YAML
 
 echo $DATABASE_FILE_CONTENT >> config/database.yml
 
+Run the rake task
 bin/rake docs:api:build -- --api-class-name=V2::API --base-dir="$BUILD_DIR/public/api-docs"
 
 # Put database.yml back where it was
 rm config/database.yml
 cp config/database.yml.stash config/database.yml
 
+# Exit 0—success
 exit 0
