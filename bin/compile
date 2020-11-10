@@ -5,6 +5,9 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo `which gem`
+echo `which bundle`
+
 cd $BUILD_DIR
 
 echo "DATABASE_URL:$DATABASE_URL"
