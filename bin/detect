@@ -4,6 +4,12 @@
 BUILD_DIR=$1
 cd $BUILD_DIR
 
+gem env
+
+cat `gem env`
+
+exit 1
+
 # This pack is valid if the boxt_documentation gem is installed
 $BUILD_DIR/bin/bundle info boxt_documentation
 if [ $? -eq 0 ]; then
