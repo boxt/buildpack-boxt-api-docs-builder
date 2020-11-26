@@ -1,9 +1,11 @@
 #!/bin/sh
 # bin/detect BUILD_DIR
 
+echo "BOXT Documentation"
+exit 0
+
 BUILD_DIR=$1
 cd $BUILD_DIR
-exit 0
 
 
 
