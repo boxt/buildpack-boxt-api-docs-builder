@@ -8,6 +8,7 @@ ENV_DIR=$3
 
 cd $BUILD_DIR
 
+print "TESTING LOAD PATH..."
 ls -al $BUILD_DIR/bin/
 
 # Set ENV vars
