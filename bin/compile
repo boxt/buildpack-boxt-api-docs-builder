@@ -9,7 +9,7 @@ ENV_DIR=$3
 cd $BUILD_DIR
 
 print "TESTING LOAD PATH..."
-ls -al $BUILD_DIR/bin/
+gem env
 
 # Set ENV vars
 export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
