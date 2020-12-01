@@ -6,12 +6,8 @@ exit 0
 
 BUILD_DIR=$1
 cd $BUILD_DIR
-
-
-
-
 # This pack is valid if the boxt_documentation gem is installed
-$BUILD_DIR/bin/bundle info boxt_documentation
+gem info boxt_documentation
 if [ $? -eq 0 ]; then
   echo "BOXT Documentation"
   exit 0

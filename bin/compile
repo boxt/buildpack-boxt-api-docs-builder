@@ -8,9 +8,6 @@ ENV_DIR=$3
 
 cd $BUILD_DIR
 
-echo "TESTING LOAD PATH..."
-gem env
-
 # Set ENV vars
 export DATABASE_URL=`cat $ENV_DIR/DATABASE_URL`
 export RAILS_ENV=`cat $ENV_DIR/RAILS_ENV`
