@@ -8,7 +8,7 @@ ENV_DIR=$3
 
 cd $BUILD_DIR
 
-print "TESTING LOAD PATH..."
+echo "TESTING LOAD PATH..."
 gem env
 
 # Set ENV vars
